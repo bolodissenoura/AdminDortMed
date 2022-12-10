@@ -2,6 +2,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/database";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyD6pQLZLs6gS4ZfzFeFSvyH1tb5umcqSEw",
   authDomain: "dortmedadmin.firebaseapp.com",
@@ -12,7 +13,7 @@ const firebaseConfig = {
   measurementId: "G-Y1GVCNZ8BS",
 };
 
-firebase.initializeApp(firebaseConfig);
+!firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
 const auth = firebase.auth();
 
